@@ -1,12 +1,15 @@
 import "./App.css";
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
+import LoremIpsum from "react-lorem-ipsum";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Our first React project</p>
-        <p>Ivano-Frankivsk Region Youth Library</p>
-      </header>
+    <div className="clear-all">
+      <Header />
+      <Main />
+      <Footer />
     </div>
   );
 }
