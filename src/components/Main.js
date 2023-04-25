@@ -15,6 +15,7 @@ function Main() {
         />
         <div></div>
         <div className="grid about-section">
+          <img src={process.env.PUBLIC_URL + "libraries.jpeg"} alt="My Image" />
           <div>
             <LoremIpsum
               p={3}
@@ -24,8 +25,6 @@ function Main() {
               paragraphUpperBound={6}
             />
           </div>
-
-          <img src={process.env.PUBLIC_URL + "libraries.jpeg"} alt="My Image" />
         </div>
       </section>
     </main>

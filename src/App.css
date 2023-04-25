@@ -36,17 +36,6 @@
   justify-self: end;
 }
 
-.nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav li:not(last-child) {
-  margin-right: 20px;
-}
-
 .nav a {
   color: #333;
   text-decoration: none;
@@ -59,18 +48,76 @@
   color: #e74c3c;
 }
 
+/*Humburger menu*/
+
+.nav-links {
+  display: none;
+}
+
+.mobile-menu-icon {
+  display: block;
+  font-size: 30px;
+  color: white;
+  background-color: rgb(114, 127, 123);
+  border: none;
+  outline: none;
+}
+
+nav li {
+  color: white;
+  text-align: center;
+  /* padding: 20px; */
+  width: 100%;
+  transition: all 0.5 ease;
+}
+
+.nav-links-mobile {
+  position: absolute;
+  display: block;
+  text-align: center;
+  list-style: none;
+  background-color: #a4a4a4;
+  left: 0;
+  right: 0;
+  top: 80px;
+  padding: 20px;
+  transition: all 0.5s ease-out;
+}
+
+.nav-links-mobile li:not(last-child) {
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-menu-icon {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav li:not(last-child) {
+    margin-right: 30px;
+  }
+}
+
 /*Main section*/
 
 main {
   padding: 20px;
 }
 
-.grid.about-section {
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  gap: 10px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+@media screen and (min-width: 768px) {
+  .grid.about-section {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 }
 
 /*Footer*/
