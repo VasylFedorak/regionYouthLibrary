@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+import { Link } from "react-scroll";
 
 function Header() {
   const [isMobile, setIsMobile] = useState(false);
 
   return (
-    <header className="header ">
+    <header className="header " id="home">
       <div className="logo">
-        <img src="#" alt="Library_Logo" />
+        <img src="images/logo.jpeg" alt="Library_Logo" />
       </div>
       <nav className="nav">
         <ul
@@ -14,27 +15,63 @@ function Header() {
           onClick={() => setIsMobile(false)}
         >
           <li>
-            <a href="#">Home</a>
+            <Link
+              activeClass="active"
+              to="home"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              onClick={() => setIsMobile(false)}
+            >
+              Home
+            </Link>
           </li>
           <li>
-            <a href="#">About</a>
+            <Link
+              activeClass="active"
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              onClick={() => setIsMobile(false)}
+            >
+              About
+            </Link>
           </li>
           <li>
-            <a href="#">Serviсes</a>
+            <Link
+              activeClass="active"
+              to="services"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              onClick={() => setIsMobile(false)}
+            >
+              Services
+            </Link>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <Link
+              activeClass="active"
+              to="contacts"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              onClick={() => setIsMobile(false)}
+            >
+              Contacts
+            </Link>
           </li>
         </ul>
         <button
-          className="mobile-menu-icon"
           onClick={() => setIsMobile(!isMobile)}
+          className={isMobile ? "hidden" : "mobile-menu-icon"}
         >
-          {isMobile ? (
-            <i className="fas fa-times"></i>
-          ) : (
-            <i className="fas fa-bars"></i>
-          )}
+          <i className="fas fa-bars"></i>
         </button>
       </nav>
     </header>

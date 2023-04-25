@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+.clear-all {
+  all: initial;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+/*Header*/
+
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "logo nav";
+  height: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+  align-items: center;
+  background-color: brown;
+}
+
+.logo {
+  grid-area: logo;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo img {
+  width: 60px;
+}
+
+.nav {
+  grid-area: nav;
+  justify-self: end;
+}
+
+.nav a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.nav a:hover {
+  color: #e74c3c;
+}
+
+/*Humburger menu*/
+
+.nav-links {
+  display: none;
+}
+
+.mobile-menu-icon {
+  display: block;
+  font-size: 30px;
+  color: white;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+nav li {
+  color: white;
+  text-align: center;
+  width: 100%;
+  transition: all 0.5 ease;
+}
+
+.nav-links-mobile {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  list-style: none;
+  background-color: rgba(164, 164, 164, 0.95);
+  top: 0;
+  left: 0;
+}
+
+.nav-links-mobile li:not(:last-child) {
+  margin-bottom: 50px;
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-menu-icon {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+  .nav li:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+/*Main section*/
+
+main {
+  padding: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .grid.about-section {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+/*services section*/
+
+.grid.services {
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+@media screen and (min-width: 480px) {
+  .grid.services {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .grid.services {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+}
+
+/*Contact section*/
+
+.contacts {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: grey;
+}
+
+.contacts p {
+  font-size: 24px;
+  line-height: 2.5rem;
+}
+
+.contacts a {
+  font-size: 28px;
+  text-decoration: none;
+  color: grey;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 479px) {
+  .contacts {
+    flex-direction: column;
+  }
+
+  .contact-info div:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .contacts a {
+    font-size: 20px;
+  }
+
+  .contact-info div:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .contacts a {
+    font-size: 30px;
+  }
+
+  .contact-info {
+    flex-direction: row;
+  }
+
+  .contact-info div:not(:last-child) {
+    margin-right: 50px;
+  }
+}
+
+/*Footer*/
+
+footer {
+  display: flex;
+  min-height: 50px;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+  color: white;
+}
+
+/*ComeBackButton*/
+
+#back-to-top-btn {
+  display: none;
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  font-size: 16px;
+  background-color: rgba(255, 252, 252, 0.7);
+  color: #8d8b8b;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+#back-to-top-btn.show {
+  display: block;
+}
