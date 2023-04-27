@@ -1,23 +1,22 @@
 import React, { useState, useEffect } from "react";
-import LoremIpsum from "react-lorem-ipsum";
+import "../style.css";
 
-function Contacts() {
-  const [offsetY, setOffsetY] = useState(0);
+function Contacts(props) {
+  const [fontSize, setFontSize] = useState("var(--font-size)");
 
-  const handleScroll = () => setOffsetY(window.pageYOffset);
+  const handleScroll = () => {
+    const offsetY = window.pageYOffset;
+    const newFontSize = `calc(${fontSize} + ${offsetY / 100}px)`;
+    setFontSize(newFontSize);
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <section
-      className="contacts"
-      id="contacts"
-      style={{ fontSize: `calc(28px + ${offsetY / 100}px)` }}
-    >
+    <section className="contacts" id="contacts" style={{ fontSize }}>
       <p>
         123 Main Street
         <br />
@@ -27,19 +26,10 @@ function Contacts() {
       </p>
       <div className="contact-info">
         <div>
-          <a
-            href="mailto:example@example.com"
-            style={{ fontSize: `calc(28px + ${offsetY / 100}px)` }}
-          >
-            example@example.com
-          </a>
+          <a href="mailto:example@example.com">example@example.com</a>
         </div>
         <div>
-          <a
-            href="tel:+1234567890"
-            className="phone"
-            style={{ fontSize: `calc(28px + ${offsetY / 100}px)` }}
-          >
+          <a href="tel:+1234567890" className="phone">
             +1(123) 456-7890
           </a>
         </div>
