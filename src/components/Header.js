@@ -5,7 +5,7 @@ function Header() {
   const [isMobile, setIsMobile] = useState(false);
 
   return (
-    <header className="header " id="home">
+    <header className="header" id="home">
       <div className="logo">
         <img src="images/logo.jpeg" alt="Library_Logo" />
       </div>

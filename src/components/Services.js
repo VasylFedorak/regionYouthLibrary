@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 function Services() {
+  const [offsetY, setOffsetY] = useState(0);
+
+  const handleScroll = () => setOffsetY(window.pageYOffset);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       <section id="services">
-        <h2>Services that we provide</h2>
+        <div className="services-title">
+          <h2 style={{ transform: `translateX(${offsetY * 0.1}px)` }}>
+            Services that we provide
+          </h2>
+        </div>
         <ul className="grid services">
           <li>
             <img src="images/1.jpeg" alt="My Image" />
